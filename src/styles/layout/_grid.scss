@@ -1,0 +1,66 @@
+
+.container {
+  margin: 0;
+  @include responsive($tablet-landscape){
+    margin: $grid-gutter;
+  }
+
+  .row {
+    max-width: 100%;
+    padding: 0 1rem;
+
+
+
+    @include clearfix;
+
+
+    @include responsive($tablet-landscape){
+      max-width: $row-width;
+      margin: 0 auto;
+      padding: 1rem 3rem;
+    }
+
+    @include responsive($desktop){
+      padding: 3rem;
+    }
+
+    [class^="col-"] {
+      float: left;
+      width: 100%;
+      margin-bottom: $col-vertical-gutter-small;
+
+      @include responsive($tablet-portrait) {
+        margin-bottom: $col-vertical-gutter;
+      }
+
+      &:not(&:last-child) {
+        margin-right: 0;
+
+        @include responsive($tablet-landscape) {
+          margin-right: $col-horizontal-gutter;
+        }
+      }
+
+    }
+
+    @include responsive($tablet-landscape) {
+
+      .col-1 {
+        width: calc((100% - 3 * #{$col-horizontal-gutter}) / 4);
+      }
+
+      .col-2 {
+        width: calc( 2 * ((100% - 3 * #{$col-horizontal-gutter}) / 4) + #{$col-horizontal-gutter});
+      }
+
+      .col-3 {
+        width: calc( 3 * ((100% - 3 * #{$col-horizontal-gutter}) / 4) + 2 * #{$col-horizontal-gutter});
+      }
+
+      .col-4 {
+        width: 100%;
+      }
+    }
+
+  }
+}

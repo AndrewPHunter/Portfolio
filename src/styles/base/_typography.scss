@@ -1,0 +1,83 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $default-font-color;
+  background-color: $default-body-color;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  font-family: "Raleway", sans-serif;
+
+  &--main {
+    color: $color-white;
+    font-weight: 700;
+    font-size: 4rem;
+    display: block;
+
+    @include responsive($tablet-portrait) {
+      font-size: 5rem;
+      letter-spacing: 1.5rem;
+    }
+
+    @include responsive($tablet-landscape) {
+      font-size: 7rem;
+      letter-spacing: 1.75rem;
+    }
+  }
+
+  &--sub {
+    color: $color-white;
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    display: block;
+
+    @include responsive($tablet-portrait) {
+      font-size: 4rem;
+      letter-spacing: .2rem;
+    }
+  }
+}
+
+.heading-secondary{
+  display: block;
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  color: $color-primary;
+
+  @supports (-webkit-background-clip: text) {
+    background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
+    -webkit-background-clip: text;
+    color:transparent;
+  }
+
+  @include responsive($tablet-portrait) {
+    font-size: 5rem;
+    letter-spacing: .2rem;
+  }
+
+  &--white{
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: $color-white;
+
+    @include responsive($tablet-portrait) {
+      font-size: 5rem;
+      letter-spacing: .2rem;
+    }
+
+    @include responsive($tablet-landscape) {
+      letter-spacing: .8rem;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.profile {
+  background-color: $color-white;
+  text-align: center;
+
+  @supports(clip-path: polygon(0 0)) {
+    margin-top: -5rem;
+    padding: 5rem 2rem;
+    transform: skewY(-12deg);
+
+    &__content {
+      transform: skewY(12deg);
+    }
+
+    @include responsive($tablet-portrait) {
+      margin-top: -10rem;
+      padding: 10rem 3rem;
+      transform: skewY(-10deg);
+      &__content {
+        transform: skewY(10deg);
+      }
+    }
+
+    @include responsive($tablet-landscape) {
+      transform: skewY(-5deg);
+      &__content {
+        transform: skewY(5deg);
+      }
+    }
+  }
+
+  &__info {
+    @include responsive($tablet-landscape) {
+      display: table;
+      width: 75%;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__left,
+  &__right {
+
+    @include responsive($tablet-landscape) {
+      display: table-cell;
+      vertical-align: middle;
+      width: 50%;
+    }
+  }
+
+  &__right {
+    text-align: left;
+  }
+
+  &__img {
+    display: inline-block;
+    max-width: 75%;
+    border-radius: .5rem;
+    box-shadow: 0 2rem 4rem rgba($color-black, .8);
+    margin-bottom: 3rem;
+
+    @include responsive($tablet-landscape) {
+      margin-bottom: 0;
+
+      @supports (clip-path: circle(0)) {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        clip-path: circle(43% at 58% 51%);
+        margin-left: -5rem;
+      }
+    }
+
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    color:$color-grey-dark;
+    font-size: $default-font-size;
+    width: 100%;
+    border-top: 1px $color-grey-light solid;
+    padding: 2rem;
+
+    @include responsive($tablet-portrait) {
+      padding: 3rem 6rem;
+      font-size: 2.5rem;
+    }
+    @include responsive($tablet-landscape) {
+      padding: 1rem;
+      border-top: none;
+    }
+
+  }
+}
+
+.contact {
+  position: relative;
+  padding: 15rem 0;
+  background-color: transparent;
+  text-align: center;
+
+  &__cta {
+    padding: 0 2rem;
+    text-align: center;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: $default-font-size;
+    color: $color-black;
+
+    @include responsive($tablet-portrait) {
+      padding: 0 3rem;
+      font-size: 2.5rem;
+    }
+
+    @include responsive($tablet-landscape) {
+      text-align: left;
+    }
+  }
+
+  &__email {
+    margin: 3rem 0;
+    @include responsive($tablet-landscape) {
+      margin: 5rem;
+      float: right;
+    }
+  }
+}

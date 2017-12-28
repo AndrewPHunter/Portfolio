@@ -1,0 +1,77 @@
+.projects {
+  margin-top: -5rem;
+  padding: 10rem 2rem;
+  background-image: linear-gradient(to right bottom, rgba($color-primary, .8), rgba($color-primary-dark, .8)),
+  url(../img/projects-small.jpg);
+  background-size: cover;
+  background-position: top;
+
+  @include responsive($tablet-portrait) {
+    margin-top: -7rem;
+    padding: 12rem 2rem;
+    background-image: linear-gradient(to right bottom, rgba($color-primary, .8), rgba($color-primary-dark, .8)),
+    url(../img/projects-medium.jpg);
+  }
+
+  @include responsive($tablet-landscape) {
+    margin-top: -10rem;
+    padding: 12rem 2rem;
+    background-image: linear-gradient(to right bottom, rgba($color-primary, .8), rgba($color-primary-dark, .8)),
+    url(../img/projects-large.jpg);
+  }
+
+  text-align: center;
+
+  &__list {
+    list-style: none;
+    margin: 0 3rem;
+  }
+
+  &__item {
+    display: block;
+    background-color: rgba($color-white, .7);
+    color: $color-black;
+    font-weight: 400;
+    font-size: $default-font-size;
+    border-radius: 1rem;
+
+    padding: 2rem;
+    text-align: left;
+    margin-bottom: 5rem;
+
+
+    @include responsive($tablet-portrait) {
+      border-radius: 0;
+      transform: skewX(-10deg);
+    }
+
+  }
+
+  &__item-container {
+
+    @include responsive($tablet-portrait) {
+      transform: skewX(10deg);
+    }
+    padding: 2rem 1rem;
+  }
+
+  &__item-header {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 2.3rem;
+  }
+
+  &__item-description{
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+  }
+
+  &__item-view{
+    float:right;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+
+  }
+}
