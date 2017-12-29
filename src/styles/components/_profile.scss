@@ -28,100 +28,70 @@
     }
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__info {
+    display: flex;
+    flex-direction: column;
+
     @include responsive($tablet-landscape) {
-      display: table;
-      width: 75%;
-      padding: 1rem;
-      margin: 0 auto;
+      flex-direction: row;
     }
   }
 
-  &__left,
-  &__right {
-
+  &__info > * {
     @include responsive($tablet-landscape) {
-      display: table-cell;
-      vertical-align: middle;
-      width: 50%;
+      flex: 0 0 50%;
     }
   }
 
-  &__right {
-    text-align: left;
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__img {
-    display: inline-block;
-    max-width: 75%;
+    width: 75%;
     border-radius: .5rem;
     box-shadow: 0 2rem 4rem rgba($color-black, .8);
     margin-bottom: 3rem;
 
     @include responsive($tablet-landscape) {
       margin-bottom: 0;
-
       @supports (clip-path: circle(0)) {
-        max-width: 100%;
         border-radius: 0;
         box-shadow: none;
         clip-path: circle(43% at 58% 51%);
-        margin-left: -5rem;
       }
     }
-
   }
 
-  &__text {
+  &__text-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__text{
+    text-align: left;
     font-family: "Roboto", sans-serif;
     color:$color-grey-dark;
     font-size: $default-font-size;
-    width: 100%;
     border-top: 1px $color-grey-light solid;
-    padding: 2rem;
+    //padding: 2rem;
 
     @include responsive($tablet-portrait) {
       padding: 3rem 6rem;
       font-size: 2.5rem;
     }
-    @include responsive($tablet-landscape) {
+    @include responsive($desktop) {
       padding: 1rem;
       border-top: none;
-    }
-
-  }
-}
-
-.contact {
-  position: relative;
-  padding: 15rem 0;
-  background-color: transparent;
-  text-align: center;
-
-  &__cta {
-    padding: 0 2rem;
-    text-align: center;
-
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: $default-font-size;
-    color: $color-black;
-
-    @include responsive($tablet-portrait) {
-      padding: 0 3rem;
-      font-size: 2.5rem;
-    }
-
-    @include responsive($tablet-landscape) {
-      text-align: left;
-    }
-  }
-
-  &__email {
-    margin: 3rem 0;
-    @include responsive($tablet-landscape) {
-      margin: 5rem;
-      float: right;
     }
   }
 }

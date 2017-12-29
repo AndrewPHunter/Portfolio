@@ -36,8 +36,13 @@ body {
     display: block;
 
     @include responsive($tablet-portrait) {
-      font-size: 4rem;
+      font-size: 3rem;
       letter-spacing: .2rem;
+    }
+
+    @include responsive($tablet-landscape) {
+      font-size: 4rem;
+      letter-spacing: .4rem;
     }
   }
 }

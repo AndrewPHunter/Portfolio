@@ -1,0 +1,44 @@
+.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  background-color: transparent;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: $default-font-size;
+  color: $color-black;
+
+  @include responsive($tablet-portrait) {
+    padding: 5rem 4rem;
+  }
+
+  @include responsive($tablet-landscape) {
+    padding: 10rem 8rem;
+  }
+
+  &__text {
+    padding: 0 2rem;
+    text-align: left;
+
+    @include responsive($tablet-portrait) {
+      padding: 0 3rem;
+      font-size: 2.5rem;
+    }
+
+  }
+
+  &__email {
+    margin: 3rem 0;
+
+    @include responsive($tablet-portrait) {
+      font-size: 3rem;
+    }
+
+    @include responsive($tablet-landscape) {
+      margin: 5rem;
+    }
+  }
+}

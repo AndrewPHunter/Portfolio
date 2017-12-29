@@ -1,5 +1,7 @@
 .hero {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 85vh;
   background-image: linear-gradient(to right bottom, rgba($color-primary, .8), rgba($color-primary-dark, .8)),
                     url(../img/hero-small.jpg);
@@ -26,9 +28,6 @@
   }
 
   &__text-box {
-    width: 100%;
     text-align: center;
-    @include center;
-
   }
 }
