@@ -4,7 +4,7 @@
 node_modules/
 
 #css - this project uses SASS
-src/**/*.css
+# src/**/*.css commit CSS for Udacity review
 
 # production
 build/
